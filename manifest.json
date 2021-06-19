@@ -3,7 +3,8 @@
   "name": "yukkuri mouse stalker",
   "version": "0.1",
   "content_scripts": [{
-    "matches": ["https://twitter.com/*"],
-    "js": ["main.js"]
+    "matches": ["https://www.google.com/*"],
+    "js": ["main.js"],
+    "css": ["main.css"]
   }]
 }
