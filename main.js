@@ -1,7 +1,3 @@
-  const IMG_WID = 48;
-  const IMG_HEI = 48;
-  const DIV_ID = 'stalker-obj';
-
   const imageUrl = chrome.runtime.getURL('images/yukkuri.png');
   var body_elements = document.getElementsByTagName('body');
   var elem = document.createElement('div');
@@ -11,10 +7,6 @@
   elem.id = 'mouse-stalker';
   elem.append(img)
   body_elements[0].appendChild(elem);
-
-
-  console.log(body_elements[0])
-  console.log(elem)
 
 
   const stalker = document.getElementById('mouse-stalker');
