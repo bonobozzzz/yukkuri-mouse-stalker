@@ -10,6 +10,8 @@
 
 
   const stalker = document.getElementById('mouse-stalker');
-  document.addEventListener('mousemove', function (e) {
-  stalker.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
+  document.addEventListener('mousemove', (e) => {
+  var isRight = e.clientX  > document.documentElement.clientWidth / 2
+
+  stalker.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)' + `${ isRight === true ? "scale(1, 1)" :  "scale(-1, 1)"}`
 });
