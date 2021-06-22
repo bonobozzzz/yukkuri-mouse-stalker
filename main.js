@@ -1,17 +1,18 @@
-  const imageUrl = chrome.runtime.getURL('images/yukkuri.png');
-  var body_elements = document.getElementsByTagName('body');
-  var elem = document.createElement('div');
-  var img = document.createElement('img');
-  img.src = imageUrl
-  img.id = 'yukkuri'
-  elem.id = 'mouse-stalker';
-  elem.append(img)
-  body_elements[0].appendChild(elem);
+const imageUrl = chrome.runtime.getURL('images/yukkuri.png');
+var body_elements = document.getElementsByTagName('body');
+var elem = document.createElement('div');
+var img = document.createElement('img');
+img.src = imageUrl
+img.id = 'yukkuri'
+elem.id = 'mouse-stalker';
+elem.append(img)
+body_elements[0].appendChild(elem);
 
+const isRight = (e) => e.clientX  > document.documentElement.clientWidth / 2
 
-  const stalker = document.getElementById('mouse-stalker');
+const stalker = document.getElementById('mouse-stalker');
   document.addEventListener('mousemove', (e) => {
-  var isRight = e.clientX  > document.documentElement.clientWidth / 2
+  // var isRight = e.clientX  > document.documentElement.clientWidth / 2
 
-  stalker.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)' + `${ isRight === true ? "scale(1, 1)" :  "scale(-1, 1)"}`
+  stalker.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)' + `${ isRight(e) === true ? "scale(1, 1)" :  "scale(-1, 1)"}`
 });
